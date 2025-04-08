@@ -1,4 +1,3 @@
-%md
 # **OBJETIVO**
 
 **Fazer um estudo com dados do site IMDB (https://datasets.imdbws.com/), dos últimos 15 anos, sobre as avaliações dos títulos produzidos com avaliações igual ou acima de 5 e votos acima de 10000.**</br>
