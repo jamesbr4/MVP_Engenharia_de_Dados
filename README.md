@@ -224,47 +224,47 @@ Criação tabela Title_ratings</br>
 
 **1)  Quais são os 15 filmes, ordenados por ano (mais recente) e avaliação (maior para o menor), com avaliações igual ou maior que 8?**</br>
 `SELECT * FROM GOLD.estudo WHERE averageRating>=8 ORDER BY startYear desc, averageRating desc`</br>
-R: Os filmes são: Oficina do Diabo(2025) - 8.2, Rekhachithram(2025) - 8, Shingeki no Kyojin: The Last Attack(2024) - 9.2, Solo Leveling: ReAwakening(2024) - 8.9, Dune: Part Two(2024) - 8.5, Maste eshgh(2024) - 8.5, Maharaja(2024) - 8.4, Meiyazhagan(2024) - 8.4, Ainda Estou Aqui(2024) - 8.3, No Other Land(2024) - 8.3, Manjummel Boys(2024) - 8.2, Ibelin(2024) - 8.2, Amaran(2024) - 8.2, The Wild Robot(2024) - 8.2 e Kishkindha Kaandam(2024) - 8.</br></br>
+Resposta: Os filmes são: Oficina do Diabo(2025) - 8.2, Rekhachithram(2025) - 8, Shingeki no Kyojin: The Last Attack(2024) - 9.2, Solo Leveling: ReAwakening(2024) - 8.9, Dune: Part Two(2024) - 8.5, Maste eshgh(2024) - 8.5, Maharaja(2024) - 8.4, Meiyazhagan(2024) - 8.4, Ainda Estou Aqui(2024) - 8.3, No Other Land(2024) - 8.3, Manjummel Boys(2024) - 8.2, Ibelin(2024) - 8.2, Amaran(2024) - 8.2, The Wild Robot(2024) - 8.2 e Kishkindha Kaandam(2024) - 8.</br></br>
 **2) Quais são os 15 filmes, ordenados por ano (mais recente) e avaliação (menor para o maior), com avaliações igual ou menor que 6?**</br>
 `SELECT * FROM GOLD.estudo WHERE averageRating<=6 ORDER BY startYear desc , averageRating asc`</br>
-R: Os filmes são: Flight Risk(2025) - 5.2, Emergency(2025) - 5.2, Game Changer(2025) - 5.5, You're Cordially Invited(2025) - 5.5, Wolf Man(2025) - 5.6, Back in Action(2025) - 5.9, The Electric State(2025) - 5.9, Captain America: Brave New World(2025) - 5.9, Yudhra(2024) - 5, Time Cut(2024) - 5, The Deliverance(2024) - 5.1, Irish Wish(2024) - 5.2, Miller's Girl(2024) - 5.2, Joker: Folie à Deux(2024) - 5.2 e AfrAId(2024) - 5.2.</br></br>
+Resposta: Os filmes são: Flight Risk(2025) - 5.2, Emergency(2025) - 5.2, Game Changer(2025) - 5.5, You're Cordially Invited(2025) - 5.5, Wolf Man(2025) - 5.6, Back in Action(2025) - 5.9, The Electric State(2025) - 5.9, Captain America: Brave New World(2025) - 5.9, Yudhra(2024) - 5, Time Cut(2024) - 5, The Deliverance(2024) - 5.1, Irish Wish(2024) - 5.2, Miller's Girl(2024) - 5.2, Joker: Folie à Deux(2024) - 5.2 e AfrAId(2024) - 5.2.</br></br>
 **3)  Quais são os 10 filmes que menos receberam votos? Faça um ranking.**</br>
 `select originalTitle, startYear, numVotes, rank() over (order by numVotes asc) as ranking from gold.estudo order by ranking
 limit 10`</br>
-R: Os 10 filmes que menos receberam votos ordenados por ranking são: What Keeps You Alive, The Mercy, Tang shan da di zhen, Killing Ground, Anjaam Pathiraa, Come and Find Me, Dolphin Tale 2, Fúsi, Sound of Noise e Please Don't Destroy: The Treasure of Foggy Mountain respectivamente.</br></br>
+Resposta: Os 10 filmes que menos receberam votos ordenados por ranking são: What Keeps You Alive, The Mercy, Tang shan da di zhen, Killing Ground, Anjaam Pathiraa, Come and Find Me, Dolphin Tale 2, Fúsi, Sound of Noise e Please Don't Destroy: The Treasure of Foggy Mountain respectivamente.</br></br>
 **4)  Quais são os 10 filmes que mais receberam votos? Faça um ranking.**</br>
 `select originalTitle, startYear, numVotes, rank() over (order by numVotes desc) as ranking from gold.estudo order by ranking
 limit 10`</br>
-R: Os 10 filmes que mais receberam votos ordenados por ranking são: Inception, Interstellar, The Dark Knight Rises, Django Unchained, The Wolf of Wall Street, Joker, Shutter Island, The Avengers Avengers: Endgame e Guardians of the Galaxy respectivamente.</br></br>
+Resposta: Os 10 filmes que mais receberam votos ordenados por ranking são: Inception, Interstellar, The Dark Knight Rises, Django Unchained, The Wolf of Wall Street, Joker, Shutter Island, The Avengers Avengers: Endgame e Guardians of the Galaxy respectivamente.</br></br>
 **5)  Quais são os 10 filmes menos avaliados?**</br>
 `select originalTitle, startYear, averageRating, rank() over (order by averageRating asc) as ranking from gold.estudo order by ranking
 limit 10`</br>
-R: Os 10 filmes menos avaliados são: 47 Meters Down: Uncaged, The Romantics, 2000 Mules, Yudhra, Charlie's Angels, Time Cut, I Don't Know How She Does It, Blair Witch, Fahrenheit 451 e Elephant White respectivamente.</br></br>
+Resposta: Os 10 filmes menos avaliados são: 47 Meters Down: Uncaged, The Romantics, 2000 Mules, Yudhra, Charlie's Angels, Time Cut, I Don't Know How She Does It, Blair Witch, Fahrenheit 451 e Elephant White respectivamente.</br></br>
 **6)  Quais são os 10 filmes mais bem avaliados?**</br>
 `select originalTitle, startYear, averageRating, rank() over (order by averageRating desc) as ranking from gold.estudo order by ranking
 limit 10`</br>
-R: Os 10 filmes mais bem avaliados são: 47 Meters Down: Uncaged, The Romantics, 2000 Mules, Yudhra, Charlie's Angels, Time Cut, I Don't Know How She Does It, Blair Witch, Fahrenheit 451 e Elephant White respectivamente.</br></br>
+Resposta: Os 10 filmes mais bem avaliados são: 47 Meters Down: Uncaged, The Romantics, 2000 Mules, Yudhra, Charlie's Angels, Time Cut, I Don't Know How She Does It, Blair Witch, Fahrenheit 451 e Elephant White respectivamente.</br></br>
 **7)  Quantos filmes foram produzidos por ano?**</br>
 `select startYear, count(*) as qtd_filmes from gold.estudo group by startYear order by startYear desc`</br>
-R: Foram produzidos em 2025, 32 filmes; Foram produzidos em 2024, 243 filmes; Foram produzidos em 2023, 322 filmes; Foram produzidos em 2022, 338 filmes; Foram produzidos em 2021, 302 filmes; Foram produzidos em 2020, 259 filmes; Foram produzidos em 2019, 351 filmes; Foram produzidos em 2018, 380 filmes; Foram produzidos em 2017, 350 filmes; Foram produzidos em 2016, 363 filmes; Foram produzidos em 2015, 345 filmes; Foram produzidos em 2014, 371 filmes; Foram produzidos em 2013, 354 filmes; Foram produzidos em 2012, 316 filmes; Foram produzidos em 2011, 325 filmes; Foram produzidos em 2010, 297 filmes;</br></br>
+Resposta: Foram produzidos em 2025, 32 filmes; Foram produzidos em 2024, 243 filmes; Foram produzidos em 2023, 322 filmes; Foram produzidos em 2022, 338 filmes; Foram produzidos em 2021, 302 filmes; Foram produzidos em 2020, 259 filmes; Foram produzidos em 2019, 351 filmes; Foram produzidos em 2018, 380 filmes; Foram produzidos em 2017, 350 filmes; Foram produzidos em 2016, 363 filmes; Foram produzidos em 2015, 345 filmes; Foram produzidos em 2014, 371 filmes; Foram produzidos em 2013, 354 filmes; Foram produzidos em 2012, 316 filmes; Foram produzidos em 2011, 325 filmes; Foram produzidos em 2010, 297 filmes;</br></br>
 **8)  Quais são os 5 anos que produziram mais filmes?**</br>
 `select startYear, count(*) as qtd_filmes from gold.estudo group by startYear order by qtd_filmes desc
 limit 5`</br>
-R: Os anos que mais produziram filmes foram 2018, 2014, 2016, 2013 e 2019 respectivamente.</br></br>
+Resposta: Os anos que mais produziram filmes foram 2018, 2014, 2016, 2013 e 2019 respectivamente.</br></br>
 **9)  Quantos votos foram computados por ano?**</br>
 `select startYear, sum(numVotes) from gold.estudo group by startYear order by startYear desc`</br>
-R: 2025 teve 961854 votos; 2024 teve 13140638 votos; 2023 teve 19756644 votos; 2022 teve 23453898 votos; 2021 teve 21838323 votos; 2020 teve 13504278 votos; 2019 teve 31417078 votos; 2018 teve 29182593 votos; 2017 teve 31846333 votos; 2016 teve 35561997 votos; 2015 teve 31841547 votos; 2014 teve 42709464 votos; 2013 teve 42025108 votos; 2012 teve 37903271 votos; 2011 teve 37514890 votos; 2010 teve 35637814 votos;</br></br>
+Resposta: 2025 teve 961854 votos; 2024 teve 13140638 votos; 2023 teve 19756644 votos; 2022 teve 23453898 votos; 2021 teve 21838323 votos; 2020 teve 13504278 votos; 2019 teve 31417078 votos; 2018 teve 29182593 votos; 2017 teve 31846333 votos; 2016 teve 35561997 votos; 2015 teve 31841547 votos; 2014 teve 42709464 votos; 2013 teve 42025108 votos; 2012 teve 37903271 votos; 2011 teve 37514890 votos; 2010 teve 35637814 votos;</br></br>
 **10) Qual ano teve mais votos?**</br>
 `select startYear, sum(numVotes) as Total from gold.estudo group by startYear order by Total desc
 limit 1`</br>
-R: O ano de 2014, foi o ano que teve mais votos.</br></br>
+Resposta: O ano de 2014, foi o ano que teve mais votos.</br></br>
 **11) Qual ano teve menos votos?**</br>
 `select startYear, sum(numVotes) as Total from gold.estudo group by startYear order by Total asc
 limit 1`</br>
-R: O ano de 2025, foi o ano que teve menos votos.</br></br>
+Resposta: O ano de 2025, foi o ano que teve menos votos.</br></br>
 **12) Qual a média dos votos nos últimos 5 anos?**</br>
 `select avg(numVotes) as Media from gold.estudo where startYear between '2020' and '2025'`</br>
-R: A média de votos nos últimos 5 anos foi de aproximadamente 61935.</br>
+Resposta: A média de votos nos últimos 5 anos foi de aproximadamente 61935.</br>
 
 # **DISCUSSÃO**
 
