@@ -183,7 +183,7 @@ Tabela title_basics</br>
 `title_basics = pd.read_csv(url, compression='gzip', sep='\t')`</br>
 `title_basics.head()`</br>
 Tabela title_ratings</br>
-`url = "https://datasets.imdbws.com/title.ratings.tsv.gz"`</br></br>
+`url = "https://datasets.imdbws.com/title.ratings.tsv.gz"`</br>
 `title_ratings = pd.read_csv(url, compression='gzip', sep='\t')`</br>
 `title_ratings.head()`</br></br>
 4) Criaremos as tabelas Title_basics e Title_ratings na base bronze com os dados do DataFrame criado;</br>
